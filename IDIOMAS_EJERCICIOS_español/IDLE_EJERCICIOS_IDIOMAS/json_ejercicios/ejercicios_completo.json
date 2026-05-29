@@ -1,0 +1,92 @@
+{
+    "el_o_el": [
+        [
+            "___ libro que me diste es muy interesante.",
+            "el"
+        ],
+        [
+            "___ está leyendo una novela de misterio.",
+            "él"
+        ]
+    ],
+    "formular_preguntas": [
+        [
+            "Tengo 18 años",
+            "¿Cuántos años tienes?"
+        ],
+        [
+            "Trabajo como secretaria en una empresa",
+            "¿En qué trabajas?"
+        ],
+        [
+            "Estudio Filosofía en Salamanca",
+            "¿Qué estudias y dónde?"
+        ],
+        [
+            "El próximo verano voy a Chile",
+            "¿Cuándo y a dónde vas?"
+        ]
+    ],
+    "posesivos": [
+        [
+            "Este es ___ cuaderno.",
+            "mi"
+        ],
+        [
+            "___ coche está estacionado en la calle.",
+            "su"
+        ],
+        [
+            "Estas son ___ ideas.",
+            "nuestras"
+        ]
+    ],
+    "verbos_presente": [
+        [
+            "Yo ___ todas las mañanas (correr).",
+            "corro"
+        ],
+        [
+            "Ellos ___ cartas (escribir).",
+            "escriben"
+        ],
+        [
+            "Nosotros ___ juntos (trabajar).",
+            "trabajamos"
+        ]
+    ],
+    "numerales": [
+        [
+            "¿Cuántos años tienes?",
+            "dieciocho"
+        ],
+        [
+            "¿Cuál es tu número de teléfono?",
+            "cuatrocientos cinco"
+        ]
+    ],
+    "demostrativos": [
+        [
+            "Este pastel está más sabroso que ___ de ayer.",
+            "aquel"
+        ],
+        [
+            "No me gusta ___ falda en el escaparate.",
+            "esa"
+        ]
+    ],
+    "imperativos": [
+        [
+            "___ el arroz (cocer).",
+            "Cuece"
+        ],
+        [
+            "___ la carne (cortar).",
+            "Corta"
+        ],
+        [
+            "___ las verduras (mezclar).",
+            "Mezcla"
+        ]
+    ]
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "base": "gigante",
+    "modificado": "gigantazo",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "señor",
+    "modificado": "señorón",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "grande",
+    "modificado": "grandote",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "libro",
+    "modificado": "librote",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "pobre",
+    "modificado": "pobretón",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "rico",
+    "modificado": "ricacho",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "vivo",
+    "modificado": "vivaracho",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "nube",
+    "modificado": "nubarrón",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "bobo",
+    "modificado": "bobarrón",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "mozo",
+    "modificado": "mocetón",
+    "tipo": "aumentativo"
+  },
+  {
+    "base": "flor",
+    "modificado": "florecilla",
+    "tipo": "diminutivo"
+  },
+  {
+    "base": "mano",
+    "modificado": "manecita",
+    "tipo": "diminutivo"
+  },
+  {
+    "base": "pez",
+    "modificado": "pececillo",
+    "tipo": "diminutivo"
+  },
+  {
+    "base": "ave",
+    "modificado": "avecita",
+    "tipo": "diminutivo"
+  },
+  {
+    "base": "autor",
+    "modificado": "autorzuelo",
+    "tipo": "diminutivo"
+  }
+]

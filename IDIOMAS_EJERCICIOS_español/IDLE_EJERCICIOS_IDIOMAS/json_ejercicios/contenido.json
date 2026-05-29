@@ -1,0 +1,14 @@
+{
+    "reglas_ortograficas": [
+        {
+            "titulo": "Uso del punto y coma",
+            "descripcion": "El punto y coma se utiliza para separar elementos de una lista compleja.",
+            "ejemplo": "Traje manzanas, peras y uvas; limones, naranjas y mandarinas."
+        },
+        {
+            "titulo": "Uso de la tilde en palabras agudas",
+            "descripcion": "Se tildan si terminan en vocal, 'n' o 's'.",
+            "ejemplo": "canción, sofá"
+        }
+    ]
+}

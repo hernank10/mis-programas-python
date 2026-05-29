@@ -1,0 +1,17 @@
+[
+  {
+    "contexto": "Día del mes",
+    "numero": "1",
+    "correcto": "primero"
+  },
+  {
+    "contexto": "Rey de España",
+    "numero": "6",
+    "correcto": "sexto"
+  },
+  {
+    "contexto": "Siglo",
+    "numero": "21",
+    "correcto": "vigésimo primero"
+  }
+]

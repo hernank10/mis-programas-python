@@ -1,0 +1,62 @@
+{
+    "el_o_el": [
+        [
+            "___ libro que me diste es muy interesante.",
+            "el"
+        ],
+        [
+            "___ est\u00e1 leyendo una novela de misterio.",
+            "\u00e9l"
+        ]
+    ],
+    "formular_preguntas": [
+        [
+            "Tengo 18 a\u00f1os",
+            "\u00bfCu\u00e1ntos a\u00f1os tienes?"
+        ],
+        [
+            "Trabajo como secretaria",
+            "\u00bfEn qu\u00e9 trabajas?"
+        ]
+    ],
+    "posesivos": [
+        [
+            "Este es ___ cuaderno.",
+            "mi"
+        ],
+        [
+            "___ coche est\u00e1 estacionado en la calle.",
+            "su"
+        ]
+    ],
+    "verbos_presente": [
+        [
+            "Yo ___ todas las ma\u00f1anas.",
+            "corro"
+        ],
+        [
+            "Ellos ___ cartas.",
+            "escriben"
+        ]
+    ],
+    "numerales": [
+        [
+            "\u00bfCu\u00e1ntos a\u00f1os tienes?",
+            "dieciocho"
+        ],
+        [
+            "\u00bfCu\u00e1l es tu n\u00famero de tel\u00e9fono?",
+            "cuatrocientos cinco"
+        ]
+    ],
+    "demostrativos": [
+        [
+            "Este pastel est\u00e1 m\u00e1s sabroso que ___ de ayer.",
+            "aquel"
+        ],
+        [
+            "No me gusta ___ falda.",
+            "esa"
+        ]
+    ]
+}
