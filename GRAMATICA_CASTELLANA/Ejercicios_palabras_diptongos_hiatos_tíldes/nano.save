@@ -1,0 +1,82 @@
+
+Tareas y actividades que puedes realizar en Nano:
+1. Edición de archivos de texto:
+
+Crear y editar archivos de texto simples: Documentos, notas, scripts, código fuente, etc.
+Modificar el contenido de archivos existentes: Cambiar texto, agregar o eliminar líneas, corregir errores, etc.
+Realizar búsquedas y reemplazos: Buscar texto específico dentro de un archivo y reemplazarlo por otro.
+Copiar y pegar texto: Copiar partes de un archivo y pegarlas en otro lugar del mismo archivo o en un archivo diferente.
+Deshacer y rehacer acciones: Recortar los últimos cambios realizados en el archivo.
+2. Formateo de texto:
+
+Aplicar sangrías y tabulaciones: Organizar el texto en bloques y niveles de jerarquía.
+Cambiar el estilo de letra: Negrilla, cursiva, subrayado, etc.
+Alinear el texto: Izquierda, derecha, centro, justificado.
+Ajustar el ancho de línea y el espaciado entre líneas: Controlar la apariencia del texto en la pantalla.
+3. Navegación por el archivo:
+
+Moverse por el archivo: Utilizar las teclas de flecha, PgUp, PgDn, Home y End para navegar por el contenido del archivo.
+Saltar a líneas específicas: Ir a una línea específica utilizando su número o buscando texto.
+Marcar líneas o secciones de texto: Marcar partes del archivo para referencia posterior.
+4. Guardar y abrir archivos:
+
+Guardar los cambios realizados: Guardar el archivo con el nombre actual o con un nuevo nombre.
+Abrir archivos existentes: Abrir un archivo de texto para editarlo.
+5. Personalizar Nano:
+
+Cambiar la configuración de Nano: Ajustar la apariencia, los atajos de teclado y otras preferencias.
+Instalar plugins: Agregar nuevas funciones a Nano mediante plugins de terceros.
+Recursos adicionales:
+
+Documentación oficial de Nano: https://www.howtogeek.com/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/
+Atajos de teclado de Nano: https://www.nano-editor.org/dist/latest/cheatsheet.html
+Tutoriales de Nano: https://www.youtube.com/watch?v=g2PU--TctAM
+Recuerda:
+
+Nano es un editor de texto simple y no ofrece funciones avanzadas de edición de código como resaltado de sintaxis o autocompletar.
+Si necesitas estas funciones, puedes considerar utilizar un editor de código dedicado como Visual Studio Code o PyCharm.
+def conversor_unidades():
+  """Función que implementa un conversor de unidades."""
+
+  # Solicita al usuario el tipo de unidad de origen
+  unidad_origen = input("Ingrese la unidad de origen (m, cm, km, ft, in): ")
+
+  # Solicita al usuario el valor a convertir
+  valor_origen = float(input("Ingrese el valor a convertir: "))
+
+  # Solicita al usuario el tipo de unidad de destino
+  unidad_destino = input("Ingrese la unidad de destino (m, cm, km, ft, in): ")
+
+  # Convierte el valor a la unidad de destino
+  if unidad_origen == "m":
+    if unidad_destino == "cm":
+      valor_destino = valor_origen * 100
+    elif unidad_destino == "km":
+      valor_destino = valor_origen / 1000
+    elif unidad_destino == "ft":
+      valor_destino = valor_origen * 3.28084
+    elif unidad_destino == "in":
+      valor_destino = valor_origen * 39.37
+    else:
+      print("Unidad de destino no válida.")
+      return
+  elif unidad_origen == "cm":
+    if unidad_destino == "m":
+      valor_destino = valor_origen / 100
+    elif unidad_destino == "km":
+      valor_destino = valor_origen / 100000
+    elif unidad_destino == "ft":
+      valor_destino = valor_origen * 0.0328084
+    elif unidad_destino == "in":
+      valor_destino = valor_origen * 0.3937
+    else:
+      print("Unidad de destino no válida.")
+      return
+  # ... (completa las conversiones para las demás unidades)
+
+  # Muestra el resultado
+  print(f"{valor_origen} {unidad_origen} equivalen a {valor_destino:.2f} {unidad_destino}")
+
+# Llama a la función conversor_unidades()
+conversor_unidades()
+
