@@ -1,0 +1,40 @@
+{
+  "categorias": [
+    {
+      "nombre": "Anticipación con adjetivo absoluto",
+      "ejemplos": [
+        "Libros, tiene muchos",
+        "Café, tomó tres tazas",
+        "Dinero, gastó una fortuna",
+        "Razones, dio pocas",
+        "Flores, plantó cientos",
+        "Miedo, sintió mucho",
+        "Tiempo, perdió demasiado",
+        "Amor, recibió poco",
+        "Palabras, dijo las necesarias",
+        "Sueños, tuvo pocos"
+      ]
+    },
+    {
+      "nombre": "Anticipación con pronombre resuntivo",
+      "ejemplos": [
+        "Amigos, los tiene en todos lados",
+        "Libros, los compra por internet",
+        "Comida, la prepara con amor",
+        "Dinero, lo guarda bajo el colchón",
+        "Canciones, las canta en la ducha",
+        "Secretos, los guarda celosamente",
+        "Flores, las riega cada mañana",
+        "Problemas, los solucionó rápido",
+        "Miedos, los enfrentó con valentía",
+        "Sueños, los persigue sin descanso"
+      ]
+    }
+  ],
+  "metadata": {
+    "autor": "Asistente de Lingüística Computacional",
+    "descripcion": "Archivo JSON con ejemplos de estructuras de anticipación en español",
+    "version": "1.0",
+    "fecha_creacion": "2023-10-05"
+  }
+}
