@@ -1,0 +1,657 @@
+\documentclass[12pt,spanish]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Proyecto de Investigación Pedagógica}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Configuración de títulos
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+% Hipervínculos
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=black
+}
+
+% Comandos personalizados
+\newcommand{\programa}[1]{\texttt{#1}}
+\newcommand{\autor}{Hernank10}
+\newcommand{\titulo}{Desarrollo de Competencias Lingüísticas en Español \\
+Mediante Herramientas Interactivas en Python}
+
+% Inicio del documento
+\begin{document}
+
+% Portada
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge \textbf{\titulo} \par}
+    \vspace{1cm}
+    {\Large Proyecto de Investigación Pedagógica \par}
+    \vspace{1.5cm}
+    {\large \textbf{Autor:} \autor \par}
+    \vspace{0.5cm}
+    {\large \textbf{Área:} Didáctica de la Lengua Castellana \par}
+    \vspace{0.5cm}
+    {\large \textbf{Duración:} 6 meses \par}
+    \vspace{0.5cm}
+    {\large \textbf{Nivel educativo:} Educación Secundaria (14-18 años) \par}
+    \vspace{2cm}
+    {\large \today \par}
+    \vfill
+    {\large \textbf{Repositorio:} \url{https://github.com/Hernank10/mis-programas-python} \par}
+\end{titlepage}
+
+% Resumen
+\section*{Resumen}
+\addcontentsline{toc}{section}{Resumen}
+
+Este proyecto de investigación evalúa el impacto de un ecosistema de programas interactivos en Python en el desarrollo de competencias lingüísticas de lengua castellana en estudiantes de educación secundaria. La investigación emplea un diseño cuasi-experimental con grupo control y grupo experimental (N=120 estudiantes), con mediciones pre-test y post-test durante 12 semanas. Los programas incluyen ejercicios de sintaxis, juegos gramaticales, analizadores morfológicos y prácticas ortográficas basadas en las normas de la Real Academia Española. Se hipotetiza que los estudiantes que practican con estas herramientas mostrarán una mejora significativa (≥25\% en pruebas estandarizadas) en comparación con métodos tradicionales.
+
+\textbf{Palabras clave:} Lingüística computacional, didáctica de la lengua, Python educativo, gramática interactiva, sintaxis española.
+
+\newpage
+
+% Tabla de contenido
+\tableofcontents
+\newpage
+
+% Lista de tablas y figuras
+\listoftables
+\listoffigures
+\newpage
+
+\section{Planteamiento del Problema}
+
+\subsection{Diagnóstico actual}
+
+Las investigaciones en educación lingüística han identificado varias problemáticas persistentes, resumidas en la Tabla \ref{tab:problemas}.
+
+\begin{table}[H]
+\centering
+\caption{Problemáticas en la enseñanza de la lengua castellana}
+\label{tab:problemas}
+\begin{tabular}{|p{4cm}|p{6cm}|p{4cm}|}
+\hline
+\textbf{Problema} & \textbf{Evidencia} & \textbf{Consecuencia} \\
+\hline
+Enseñanza descontextualizada & La gramática se enseña con ejercicios aislados & Baja transferencia a la escritura real \\
+\hline
+Retroalimentación tardía & Correcciones días después de entregar tareas & El error se fosiliza \\
+\hline
+Falta de práctica sistemática & Pocos ejercicios por unidad didáctica & Dominio superficial \\
+\hline
+Ansiedad gramatical & Miedo a cometer errores en público & Bloqueo cognitivo \\
+\hline
+Diversidad de ritmos & Un solo ritmo para toda la clase & Desmotivación \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Pregunta de investigación}
+
+\begin{quote}
+\textbf{¿Cómo influye el uso de programas interactivos en Python (ejercicios de sintaxis, juegos gramaticales, analizadores morfológicos) en el desarrollo de la competencia lingüística en estudiantes de secundaria, comparado con métodos tradicionales de enseñanza de la lengua castellana?}
+\end{quote}
+
+\subsection{Hipótesis}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{\centering
+\textit{Los estudiantes que practican con programas interactivos en Python muestran una mejora significativa ($\geq$25\% en pruebas estandarizadas) en identificación de estructuras sintácticas, uso correcto de conectores y aplicación de normas ortográficas, en comparación con grupos que solo reciben instrucción tradicional.}}
+\end{center}
+
+\newpage
+\section{Marco Teórico}
+
+\subsection{Fundamentos pedagógicos}
+
+La Tabla \ref{tab:teorias} presenta las bases teóricas que sustentan este proyecto.
+
+\begin{table}[H]
+\centering
+\caption{Fundamentos pedagógicos del proyecto}
+\label{tab:teorias}
+\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{6cm}|}
+\hline
+\textbf{Teoría} & \textbf{Autor(es)} & \textbf{Aplicación en el proyecto} \\
+\hline
+Constructivismo & Piaget, Vygotsky & El estudiante construye conocimiento al interactuar con programas \\
+\hline
+Aprendizaje activo & Bonwell \& Eison & Ejercicios donde el usuario escribe, selecciona y transforma \\
+\hline
+Retroalimentación inmediata & Hattie \& Timperley & Corrección automática tras cada respuesta \\
+\hline
+Gamificación & Kapp, Werbach & Juegos de gramática con puntuación y niveles \\
+\hline
+Práctica distribuida & Cepeda et al. & Múltiples ejercicios espaciados en el tiempo \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Competencias lingüísticas evaluadas}
+
+Basado en el \textbf{Marco Común Europeo de Referencia (MCER)} y los estándares de la \textbf{RAE}, se evalúan seis competencias fundamentales:
+
+\begin{itemize}
+    \item \textbf{Gramatical:} Dominio de morfosintaxis
+    \item \textbf{Ortográfica:} Uso correcto de tildes y grafías
+    \item \textbf{Sintáctica:} Identificación de funciones oracionales
+    \item \textbf{Morfológica:} Análisis de prefijos y sufijos
+    \item \textbf{Fonológica:} Reconocimiento de fonemas
+    \item \textbf{Textual:} Producción de párrafos coherentes
+\end{itemize}
+
+\subsection{Estado del arte}
+
+Investigaciones previas relevantes se presentan en la Tabla \ref{tab:estado_arte}.
+
+\begin{table}[H]
+\centering
+\caption{Investigaciones previas relevantes}
+\label{tab:estado_arte}
+\begin{tabular}{|p{3.5cm}|p{6cm}|p{4cm}|}
+\hline
+\textbf{Autor(es) y año} & \textbf{Aporte} & \textbf{Limitación} \\
+\hline
+Rosell-Aguilar (2017) & Uso de apps para aprendizaje de idiomas & Resultados mixtos, falta de personalización \\
+\hline
+Godwin-Jones (2018) & Chatbots y herramientas interactivas & Buena motivación, poco contenido gramatical profundo \\
+\hline
+Pérez-Paredes (2019) & Corpus lingüísticos para enseñanza & Útil, pero requiere formación docente \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Laguna identificada:} Pocas herramientas integran \textbf{análisis morfológico automático + juegos + ejercicios de sintaxis} en un solo ecosistema. Este proyecto llena ese vacío.
+
+\newpage
+\section{Objetivos}
+
+\subsection{Objetivo general}
+
+Evaluar el impacto de un ecosistema de programas interactivos en Python en el desarrollo de competencias lingüísticas de lengua castellana en estudiantes de educación secundaria.
+
+\subsection{Objetivos específicos}
+
+\begin{table}[H]
+\centering
+\caption{Objetivos específicos e instrumentos de medición}
+\label{tab:objetivos}
+\begin{tabular}{|p{6cm}|p{7cm}|}
+\hline
+\textbf{Objetivo} & \textbf{Instrumento de medición} \\
+\hline
+Diseñar una secuencia didáctica que integre 15 programas del repositorio & Rúbrica de integración tecnológica \\
+\hline
+Medir la mejora en identificación de oraciones impersonales & Pre-test / post-test (20 ítems) \\
+\hline
+Evaluar el aumento en uso correcto de conectores & Análisis de textos producidos \\
+\hline
+Comparar la tasa de retención de reglas ortográficas & Prueba de recuerdo a los 30 días \\
+\hline
+Documentar la percepción estudiantil sobre la herramienta & Encuesta de satisfacción (escala Likert) \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Metodología}
+
+\subsection{Diseño de investigación}
+
+\begin{itemize}
+    \item \textbf{Tipo:} Cuasi-experimental con grupo control y grupo experimental, con mediciones pre-test y post-test.
+    \item \textbf{Duración:} 12 semanas (un trimestre académico)
+\end{itemize}
+
+\subsection{Participantes}
+
+\begin{table}[H]
+\centering
+\caption{Características de los participantes}
+\label{tab:participantes}
+\begin{tabular}{|p{3.5cm}|p{8cm}|}
+\hline
+\textbf{Característica} & \textbf{Detalle} \\
+\hline
+N & 120 estudiantes \\
+\hline
+Edad & 14-16 años (3º y 4º de ESO) \\
+\hline
+Centros & 2 institutos públicos (60 estudiantes cada uno) \\
+\hline
+Grupo control & Enseñanza tradicional (libro de texto + ejercicios en papel) \\
+\hline
+Grupo experimental & Enseñanza con programas Python (1 sesión/semana de 50 min) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Distribución de grupos}
+
+\begin{table}[H]
+\centering
+\caption{Distribución de grupos experimentales}
+\label{tab:grupos}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Grupo} & \textbf{Centro} & \textbf{N} & \textbf{Metodología} \\
+\hline
+Control & IES "A" & 60 & Clase magistral + ejercicios impresos \\
+\hline
+Experimental & IES "B" & 60 & Programa Python + práctica interactiva \\
+\hline
+\end{tabular}
+\end{table}
+
+\textit{Control por variables: mismo profesor, mismo horario semanal, mismo contenido curricular.}
+
+\subsection{Instrumentos de recolección}
+
+\begin{table}[H]
+\centering
+\caption{Instrumentos de recolección de datos}
+\label{tab:instrumentos}
+\begin{tabular}{|p{4cm}|p{4cm}|p{5cm}|}
+\hline
+\textbf{Instrumento} & \textbf{Aplicación} & \textbf{Qué mide} \\
+\hline
+Pre-test & Semana 1 & Conocimientos previos \\
+\hline
+Post-test 1 & Semana 6 & Avance a mitad del trimestre \\
+\hline
+Post-test 2 & Semana 12 & Logro final de competencias \\
+\hline
+Prueba de retención & Semana 16 & Memoria a largo plazo \\
+\hline
+Encuesta de percepción & Semana 12 & Motivación, utilidad percibida \\
+\hline
+Registro automático & 12 semanas & Tiempos, intentos, aciertos/errores \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Programas utilizados por semana}
+
+La Tabla \ref{tab:programas} muestra la secuencia didáctica para el grupo experimental.
+
+\begin{longtable}{|p{2cm}|p{4cm}|p{7cm}|}
+\hline
+\textbf{Semana} & \textbf{Tema} & \textbf{Programa(s)} \\
+\hline
+1 & Diagnóstico & Pre-test + exploración libre \\
+\hline
+2 & Oraciones impersonales & \programa{Oraciones impersonales con sujeto humano.py} \\
+\hline
+3 & Dativos no seleccionados & \programa{Práctica de Dativos No Seleccionados.py} \\
+\hline
+4 & Diptongos e hiatos & \programa{identifique los diptongos de las palabras.py} \\
+\hline
+5 & Tildes en palabras agudas/esdrújulas & \programa{15 palabras agudas asignadas.py} \\
+\hline
+6 & Conectores gramaticales & \programa{PRÁCTICA DE CONECTORES EN INGLÉS.py} \\
+\hline
+7 & Derivación verbal & \programa{GESTOR DE PALABRAS POR PREFIJACIÓN.py} \\
+\hline
+8 & Juego de sintaxis & \programa{Defiende la Gramática (Versión Minimalista).py} \\
+\hline
+9 & Oraciones compuestas & \programa{Juego Sintáctico - Corrector de Oraciones.py} \\
+\hline
+10 & Construcciones comparativas & \programa{PRÁCTICA- CONSTRUCCIÓN 'UN AMIGO MÍO.py} \\
+\hline
+11 & Evaluación formativa & Post-test 1 + repaso con juegos \\
+\hline
+12 & Evaluación sumativa & Post-test 2 + encuesta \\
+\hline
+\caption{Secuencia didáctica semanal}
+\label{tab:programas}
+\end{longtable}
+
+\newpage
+\section{Cronograma de Actividades}
+
+\begin{table}[H]
+\centering
+\caption{Cronograma de actividades por mes}
+\label{tab:cronograma}
+\begin{tabular}{|p{3.5cm}|p{4cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{Mes} & \textbf{Actividad} & \textbf{Responsable} & \textbf{Entregable} \\
+\hline
+Mes 1 & Revisión bibliográfica + diseño de pre-test & Investigador & Marco teórico + instrumentos \\
+\hline
+Mes 2 & Capacitación docente (3 sesiones) & Investigador + profesorado & Guía de uso de programas \\
+\hline
+Mes 3 & Aplicación de pre-test en ambos grupos & Profesores & Datos de línea base \\
+\hline
+Meses 3-6 & Intervención (12 semanas) & Profesores & Registros automáticos semanales \\
+\hline
+Mes 6 & Post-test + encuesta & Investigador & Datos post-intervención \\
+\hline
+Mes 7 & Prueba de retención & Investigador & Datos de memoria a largo plazo \\
+\hline
+Mes 7-8 & Análisis cuantitativo y cualitativo & Investigador & Tablas estadísticas, gráficos \\
+\hline
+Mes 8 & Redacción de informe final & Investigador & Artículo / tesis \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Diagrama de Gantt}
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Actividad} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \textbf{M5} & \textbf{M6} & \textbf{M7} & \textbf{M8} \\
+\hline
+Revisión bibliográfica & X & X & & & & & & \\
+\hline
+Diseño de instrumentos & & X & & & & & & \\
+\hline
+Pre-test & & & X & & & & & \\
+\hline
+Intervención & & & X & X & X & X & & \\
+\hline
+Post-test & & & & & & X & & \\
+\hline
+Prueba de retención & & & & & & & X & \\
+\hline
+Análisis de datos & & & & & & & X & X \\
+\hline
+Redacción final & & & & & & & & X \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Análisis de Datos}
+
+\subsection{Variables}
+
+\begin{table}[H]
+\centering
+\caption{Variables del estudio}
+\label{tab:variables}
+\begin{tabular}{|p{3cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Tipo} & \textbf{Variable} & \textbf{Indicador} \\
+\hline
+Independiente & Metodología & Tradicional (0) / Python interactivo (1) \\
+\hline
+Dependiente & Competencia lingüística & Puntuación en post-test (0-100) \\
+\hline
+Control & Edad, nivel socioeconómico, nota previa & Covariables en ANCOVA \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Técnicas estadísticas}
+
+\begin{table}[H]
+\centering
+\caption{Técnicas estadísticas a emplear}
+\label{tab:estadisticas}
+\begin{tabular}{|p{4cm}|p{4cm}|p{5cm}|}
+\hline
+\textbf{Contraste} & \textbf{Prueba} & \textbf{Propósito} \\
+\hline
+Normalidad & Shapiro-Wilk & Verificar distribución de datos \\
+\hline
+Homogeneidad & Levene & Comparar varianzas entre grupos \\
+\hline
+Diferencia pre-post & t de Student (muestras relacionadas) & Mejora dentro de cada grupo \\
+\hline
+Diferencia grupos & t de Student (muestras independientes) & Experimental vs control \\
+\hline
+Tamaño del efecto & d de Cohen & Magnitud de la diferencia \\
+\hline
+Relación variables & Pearson / Spearman & Correlación entre tiempo y mejora \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Consideraciones Éticas}
+
+\begin{table}[H]
+\centering
+\caption{Principios éticos y acciones correspondientes}
+\label{tab:etica}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Principio} & \textbf{Acción} \\
+\hline
+Consentimiento informado & Padres/tutores firman autorización \\
+\hline
+Confidencialidad & Los datos se anonimizan (códigos, no nombres) \\
+\hline
+Voluntariedad & Los estudiantes pueden retirarse sin penalización \\
+\hline
+Beneficencia & Programas disponibles para todos los centros después del estudio \\
+\hline
+No maleficencia & Máximo 50 min/semana adicionales \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Resultados Esperados}
+
+\subsection{Hipótesis específicas y predicciones}
+
+\begin{table}[H]
+\centering
+\caption{Hipótesis y criterios de éxito}
+\label{tab:hipotesis}
+\begin{tabular}{|p{3cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Hipótesis} & \textbf{Predicción} & \textbf{Criterio de éxito} \\
+\hline
+H1 & Mejora en identificación de oraciones impersonales & p < 0.05, d > 0.5 \\
+\hline
+H2 & Menos errores ortográficos (diptongos/hiatos) & Reducción $\geq$30\% de errores \\
+\hline
+H3 & Mejor retención de reglas a los 30 días & Diferencia $\geq$15\% vs control \\
+\hline
+H4 & Alta percepción de utilidad ($\geq$4/5) & 80\% de estudiantes satisfechos \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Productos esperados}
+
+\begin{enumerate}
+    \item Informe de investigación (50-80 páginas)
+    \item Artículo para revista educativa
+    \item Guía didáctica para docentes
+    \item Repositorio público con programas mejorados
+    \item Video-tutoriales (5-10 minutos por programa)
+\end{enumerate}
+
+\newpage
+\section{Limitaciones y Control}
+
+\begin{table}[H]
+\centering
+\caption{Limitaciones y estrategias de mitigación}
+\label{tab:limitaciones}
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Limitación} & \textbf{Estrategia de mitigación} \\
+\hline
+Efecto Hawthorne & Ambos grupos reciben igual atención; mediciones automáticas \\
+\hline
+Diferencia entre centros & Incluir centros como covariable en ANCOVA \\
+\hline
+Curva de aprendizaje tecnológico & Sesión de familiarización previa (1 hora) \\
+\hline
+Fatiga por pantalla & Sesiones máximas de 50 minutos, pausas activas \\
+\hline
+Pérdida de muestra & Sobremuestrear (N inicial = 140, esperar 120 finales) \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Bibliografía}
+
+\begin{enumerate}
+    \item Bonwell, C. C., \& Eison, J. A. (1991). \textit{Active Learning: Creating Excitement in the Classroom}. ASHE-ERIC Higher Education Report No. 1. Washington, D.C.
+
+    \item Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., \& Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. \textit{Psychological Bulletin}, 132(3), 354-380.
+
+    \item Godwin-Jones, R. (2018). Second language writing online: An update. \textit{Language Learning \& Technology}, 22(1), 1-15.
+
+    \item Hattie, J., \& Timperley, H. (2007). The power of feedback. \textit{Review of Educational Research}, 77(1), 81-112.
+
+    \item Kapp, K. M. (2012). \textit{The Gamification of Learning and Instruction}. Pfeiffer.
+
+    \item Pérez-Paredes, P. (2019). A systematic review of the uses and spread of corpora and data-driven learning in CALL research. \textit{Computer Assisted Language Learning}.
+
+    \item Piaget, J. (1970). \textit{Psicología y pedagogía}. Ariel.
+
+    \item Real Academia Española. (2010). \textit{Nueva gramática de la lengua española}. Espasa.
+
+    \item Rosell-Aguilar, F. (2017). State of the app: A taxonomy and framework for evaluating language learning mobile applications. \textit{CALICO Journal}, 34(2), 243-258.
+
+    \item Vygotsky, L. S. (1978). \textit{Mind in society: The development of higher psychological processes}. Harvard University Press.
+\end{enumerate}
+
+\newpage
+\section{Anexos}
+
+\subsection{Anexo A: Modelo de pre-test / post-test}
+
+\textbf{Instrucciones:} Selecciona la opción correcta para cada pregunta.
+
+\begin{enumerate}
+    \item ¿Cuál de las siguientes oraciones es impersonal?
+    \begin{enumerate}[label=\alph*)]
+        \item Juan estudia mucho
+        \item Llueve en la ciudad
+        \item Los niños juegan
+        \item Ella canta bien
+    \end{enumerate}
+
+    \item Identifica la palabra que contiene un hiato:
+    \begin{enumerate}[label=\alph*)]
+        \item Tierra
+        \item Ciudad
+        \item Poeta
+        \item Aéreo
+    \end{enumerate}
+
+    \item ¿Cuál de las siguientes palabras debe llevar tilde?
+    \begin{enumerate}[label=\alph*)]
+        \item Caminar
+        \item Joven
+        \item Árbol
+        \item Comer
+    \end{enumerate}
+
+    \item Selecciona el conector apropiado: "Estudió mucho, \_\_\_\_\_ no aprobó"
+    \begin{enumerate}[label=\alph*)]
+        \item por lo tanto
+        \item sin embargo
+        \item además
+        \item es decir
+    \end{enumerate}
+
+    \item Identifica el sujeto en: "Me duele la cabeza"
+    \begin{enumerate}[label=\alph*)]
+        \item Me
+        \item Duele
+        \item La cabeza
+        \item No tiene sujeto explícito
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Anexo B: Encuesta de percepción}
+
+\textbf{Instrucciones:} Marca tu grado de acuerdo con cada afirmación (1 = Totalmente en desacuerdo, 5 = Totalmente de acuerdo).
+
+\begin{center}
+\begin{tabular}{|p{8cm}|c|c|c|c|c|}
+\hline
+\textbf{Afirmación} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+\hline
+Los programas me ayudaron a entender mejor las oraciones impersonales. & & & & & \\
+\hline
+Prefiero practicar con el ordenador que con ejercicios en papel. & & & & & \\
+\hline
+La retroalimentación inmediata me ayudó a aprender de mis errores. & & & & & \\
+\hline
+Recomendaría usar estos programas a otros compañeros. & & & & & \\
+\hline
+Me sentí motivado a practicar más con los juegos gramaticales. & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Anexo C: Rúbrica de evaluación de textos}
+
+\begin{table}[H]
+\centering
+\caption{Rúbrica para evaluar textos producidos}
+\label{tab:rubrica}
+\begin{tabular}{|p{3cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+\textbf{Criterio} & \textbf{Excelente (4)} & \textbf{Bueno (3)} & \textbf{Suficiente (2)} & \textbf{Insuficiente (1)} \\
+\hline
+Coherencia & Totalmente coherente & Mayormente coherente & Alguna incoherencia & Incoherente \\
+\hline
+Conectores & Variados y precisos & Adecuados & Escasos & Ausentes \\
+\hline
+Ortografía & Sin errores & 1-2 errores & 3-4 errores & 5+ errores \\
+\hline
+Variedad sintáctica & Alta & Media & Baja & Muy baja \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Anexo D: Plan de lección tipo (50 minutos)}
+
+\begin{table}[H]
+\centering
+\caption{Estructura de una sesión típica}
+\label{tab:leccion}
+\begin{tabular}{|p{2.5cm}|p{4cm}|p{5cm}|p{2.5cm}|}
+\hline
+\textbf{Tiempo} & \textbf{Actividad} & \textbf{Descripción} & \textbf{Herramienta} \\
+\hline
+0-5' & Activación & Repaso rápido de la clase anterior & Diálogo oral \\
+\hline
+5-15' & Explicación & Introducción del nuevo concepto & Pizarra + ejemplos \\
+\hline
+15-40' & Práctica interactiva & Ejercicios con el programa Python & Programa correspondiente \\
+\hline
+40-45' & Corrección & Resolución de dudas en grupo & Puesta en común \\
+\hline
+45-50' & Cierre & Registro de puntuaciones y avance & Cuaderno / sistema \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -1,0 +1,588 @@
+\documentclass[12pt,spanish]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage[most]{tcolorbox}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\textit{Artículo Pedagógico}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Configuración de títulos
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Colores
+\definecolor{color1}{RGB}{0,102,204}
+\definecolor{color2}{RGB}{204,102,0}
+\definecolor{color3}{RGB}{0,153,76}
+
+% Comandos personalizados
+\newcommand{\programa}[1]{\texttt{\color{color2}#1}}
+\newcommand{\autor}{Hernank10}
+\newcommand{\titulo}{Aprender Lengua y Latín con Python: \\
+Un Ecosistema de Programas Interactivos}
+
+% Caja de nota pedagógica
+\newtcolorbox{nota}{
+    colback=blue!5,
+    colframe=blue!50!black,
+    arc=4pt,
+    boxrule=1pt,
+    title=Nota pedagógica
+}
+
+% Caja de ejemplo
+\newtcolorbox{ejemplo}{
+    colback=green!5,
+    colframe=green!50!black,
+    arc=4pt,
+    boxrule=1pt,
+    title=Ejemplo en el aula
+}
+
+% Caja de código
+\newtcolorbox{codigo}{
+    colback=gray!10,
+    colframe=gray!50!black,
+    arc=4pt,
+    boxrule=1pt,
+    title=Código / Comando
+}
+
+% Inicio del documento
+\begin{document}
+
+% Portada
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge \textbf{\titulo} \par}
+    \vspace{0.5cm}
+    {\Large \textcolor{color1}{Un recurso tecnológico para la enseñanza de lenguas} \par}
+    \vspace{1.5cm}
+    {\large \textbf{Autor:} \autor \par}
+    \vspace{0.5cm}
+    {\large \textbf{Áreas:} Latín, Gramática Castellana, Inglés técnico, Lingüística \par}
+    \vspace{0.5cm}
+    {\large \textbf{Nivel:} Secundaria - Universidad \par}
+    \vspace{2cm}
+    {\large \textbf{Resumen:} Más de 1,100 programas en Python para practicar declinaciones latinas, sintaxis española, fonética, morfología y juegos gramaticales. \par}
+    \vspace{2cm}
+    {\large \today \par}
+    \vfill
+    {\large \textbf{Repositorio:} \url{https://github.com/Hernank10/mis-programas-python} \par}
+\end{titlepage}
+
+% Resumen
+\section*{Resumen}
+\addcontentsline{toc}{section}{Resumen}
+
+Este artículo presenta un ecosistema de más de \textbf{1,100 programas educativos en Python} diseñados para la enseñanza de lenguas (latín, gramática castellana e inglés). La colección incluye tutores interactivos, ejercicios de sintaxis, juegos educativos con Pygame y Tkinter, herramientas de análisis morfológico, y prácticas de ortografía basadas en normas RAE. Se describe la estructura del repositorio, sus fundamentos pedagógicos (constructivismo, gamificación, retroalimentación inmediata), y se ofrecen ejemplos concretos de integración en el aula. El artículo concluye con orientaciones para docentes y sugerencias de adaptación curricular.
+
+\textbf{Palabras clave:} Enseñanza de lenguas, Python educativo, gramática interactiva, latín, sintaxis española, gamificación.
+
+\newpage
+
+% Abstract en inglés
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+This article presents an ecosystem of over \textbf{1,100 educational Python programs} designed for language teaching (Latin, Spanish grammar, and English). The collection includes interactive tutors, syntax exercises, educational games with Pygame and Tkinter, morphological analysis tools, and spelling practices based on RAE standards. The repository structure, pedagogical foundations (constructivism, gamification, immediate feedback), and concrete examples of classroom integration are described. The article concludes with guidelines for teachers and suggestions for curricular adaptation.
+
+\textbf{Keywords:} Language teaching, Educational Python, Interactive grammar, Latin, Spanish syntax, Gamification.
+
+\newpage
+
+% Tabla de contenido
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+La enseñanza tradicional de lenguas (latín, gramática española, inglés) suele basarse en ejercicios repetitivos, listas de reglas y traducción mecánica. Sin embargo, el \textbf{aprendizaje activo} —donde el estudiante interactúa, recibe retroalimentación inmediata y puede explorar ejemplos dinámicos— ha demostrado ser mucho más efectivo.
+
+El repositorio \texttt{mis-programas-python} reúne más de \textbf{1,100 programas en Python} diseñados para:
+
+\begin{itemize}
+    \item Practicar declinaciones latinas.
+    \item Dominar la sintaxis del español.
+    \item Comprender la fonética y la morfología.
+    \item Jugar mientras se aprenden estructuras gramaticales.
+    \item Unir la tecnología con la filología.
+\end{itemize}
+
+Este artículo ofrece una guía pedagógica completa para docentes, estudiantes y desarrolladores interesados en integrar la programación en la enseñanza de lenguas.
+
+\section{Latín: El regreso a Roma con código}
+
+\subsection{Estructura de la carpeta \texttt{LATIN/}}
+
+\begin{table}[H]
+\centering
+\caption{Organización de los recursos de latín}
+\label{tab:latin}
+\begin{tabular}{|p{3.5cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Carpeta} & \textbf{Contenido pedagógico} & \textbf{Tipo de práctica} \\
+\hline
+\texttt{ejercicios/} & Primera declinación (genitivo, ablativo) & Traducción, completar tablas \\
+\hline
+\texttt{tutores/} & Verbos irregulares (\textit{fero}, \textit{eo}), participios, gerundio, supino & Selección múltiple, escritura libre \\
+\hline
+\texttt{datos/} & JSON con vocabulario y ejercicios & Personalizable por el profesor \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Temas cubiertos}
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item Primera declinación
+    \item Segunda declinación
+    \item Tercera declinación
+    \item Cuarta declinación
+    \item Quinta declinación
+    \item Verbos regulares
+    \item Verbos irregulares (\textit{fero, eo})
+    \item Participios
+    \item Gerundios
+    \item Supinos
+    \item Pronombres personales
+    \item Pronombres reflexivos
+    \item Pronombres posesivos
+    \item Voz pasiva
+    \item Complemento agente
+\end{itemize}
+\end{multicols}
+
+\begin{ejemplo}
+\textbf{Ejemplo de uso en clase:}
+
+Un docente puede ejecutar \programa{latin\_tutor.py} y proyectar la consola. Los alumnos ven una palabra en latín y deben escribir su caso correspondiente. El programa evalúa al instante.
+
+\begin{codigo}
+cd LATIN/tutores
+python3 "Tutor interactivo de latín en la consola. \
+Este programa se enfoca en el vocabulario básico.py"
+\end{codigo}
+\end{ejemplo}
+
+\begin{nota}
+\textbf{Beneficio pedagógico:} La inmediatez de la corrección refuerza la memoria procedimental, clave para el aprendizaje de lenguas flexivas como el latín.
+\end{nota}
+
+\section{Gramática Castellana: De la RAE al teclado}
+
+Esta sección es un \textbf{laboratorio de sintaxis y ortografía}.
+
+\subsection{Sintaxis avanzada}
+
+La carpeta \texttt{sintaxis\_castellana/60problemas\_gramatica/} contiene:
+
+\begin{itemize}
+    \item 60 problemas gramaticales
+    \item Oraciones impersonales
+    \item Dativos no seleccionados
+    \item Alternancia causativa
+    \item Programas con Tkinter para arrastrar palabras
+    \item Transformación de oraciones activas a pasivas
+\end{itemize}
+
+\begin{ejemplo}
+\textbf{Programa destacado:}
+
+\programa{Oraciones impersonales con sujeto humano y su identidad.py}
+
+Este programa enseña al alumno a distinguir entre impersonales reflejas e impersonales con \texttt{se}.
+
+\textit{Ejemplo de oración:} "Se vive bien en esta ciudad" (impersonal refleja) vs. "Se lo dije ayer" (personal).
+\end{ejemplo}
+
+\subsection{Diptongos, hiatos y tildes}
+
+La carpeta \texttt{Ejercicios\_palabras\_diptongos\_hiatos\_tíldes/} contiene más de 50 scripts que:
+
+\begin{itemize}
+    \item Identifican diptongos en textos reales.
+    \item Validan el uso de la tilde en palabras agudas, graves y esdrújulas.
+    \item Convierten textos sin tildes a su forma correcta.
+\end{itemize}
+
+\begin{ejemplo}
+\textbf{Actividad sugerida:}
+
+El alumno pega un párrafo de un periódico y el programa le devuelve todas las palabras con hiato o diptongo resaltadas.
+\end{ejemplo}
+
+\subsection{Derivación verbal y prefijos}
+
+\texttt{HERRAMIENTA DE ANÁLISIS DE DERIVACIÓN VERBAL\_Tkinter/} permite:
+
+\begin{itemize}
+    \item Analizar un verbo y encontrar su raíz, prefijos y sufijos.
+    \item Gestionar reglas de derivación (como \textit{re-}, \textit{pre-}, \textit{sub-}).
+\end{itemize}
+
+\begin{nota}
+\textbf{Utilidad:} Ideal para entender la morfología derivativa del español (por ejemplo: \textit{predecir}, \textit{contradecir}, \textit{bendecir}).
+\end{nota}
+
+\section{Juegos Educativos: Aprender sin aburrirse}
+
+La carpeta \texttt{NUEVOS JUEGOS II/} convierte la gramática en un reto lúdico.
+
+\begin{table}[H]
+\centering
+\caption{Juegos educativos disponibles}
+\label{tab:juegos}
+\begin{tabular}{|p{5cm}|p{4cm}|p{5cm}|}
+\hline
+\textbf{Juego} & \textbf{Mecánica} & \textbf{Concepto gramatical} \\
+\hline
+\texttt{Defiende la Gramática} & Tower Defense & Oraciones correctas vs incorrectas \\
+\hline
+\texttt{Cazador de Sujeto y Predicado} & Juego de puntería & Identificar núcleos \\
+\hline
+\texttt{Arrastra las palabras} & Puzzle de orden & Sintaxis y concatenación \\
+\hline
+\texttt{Grammar Adventure} & Aventura por niveles & Oraciones compuestas y subordinadas \\
+\hline
+\texttt{Carrera de Conectores} & Carrera & Uso de conectores lógicos \\
+\hline
+\texttt{Memotest Sintáctico} & Memoria & Clasificación de oraciones \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{ejemplo}
+\textbf{Ejemplo en el aula:}
+
+"Hoy jugamos 15 minutos a \textit{Defiende la Gramática}; quien llegue a nivel 5 obtiene un punto extra."
+\end{ejemplo}
+
+\begin{nota}
+\textbf{Ventaja pedagógica:} Los juegos reducen la ansiedad ante el error y fomentan la repetición espaciada, fundamental para la consolidación de reglas gramaticales.
+\end{nota}
+
+\section{Fonética y Fonología: Los sonidos del idioma}
+
+El módulo \texttt{FOnénita\_fonología\_pyrhon/} está especializado en el \textbf{sistema fonológico del español} e \textbf{inglés}.
+
+\subsection{Funcionalidades}
+
+\begin{itemize}
+    \item Diccionario de fonemas con descripciones articulatorias.
+    \item Temporizador de estudio y cuestionarios sonoros.
+    \item Programas que usan el sintetizador de voz para pronunciar fonemas.
+    \item Ejercicios de discriminación fonética.
+\end{itemize}
+
+\begin{ejemplo}
+\textbf{Actividad práctica:}
+
+El estudiante escucha un fonema (/\texttheta/ o /s/) y selecciona la palabra que lo contiene (\textit{caza} vs \textit{casa}). El programa le da retroalimentación visual y auditiva.
+\end{ejemplo}
+
+\section{Inglés para Hispanohablantes}
+
+La carpeta \texttt{IDLes y pogramas pytho para escribir inglés/} aborda un problema común: la \textbf{transferencia negativa del español al inglés}.
+
+\begin{table}[H]
+\centering
+\caption{Programas para el aprendizaje de inglés}
+\label{tab:ingles}
+\begin{tabular}{|p{5.5cm}|p{8cm}|}
+\hline
+\textbf{Programa} & \textbf{Enfoque} \\
+\hline
+\texttt{ENTRENADOR DE PREGUNTAS EN INGLÉS} & Formulación de preguntas con auxiliares (do/does/did) \\
+\hline
+\texttt{PRÁCTICA DE CONECTORES EN INGLÉS} & Uso de \textit{however, therefore, although} \\
+\hline
+\texttt{Conversión entre oraciones concesivas y condicionales} & Traducción estructural \\
+\hline
+\texttt{English Sentence Practice} & Práctica de estructura de oraciones \\
+\hline
+\texttt{Juego- Identifying a Person} & Preguntas interrogativas para identificar personas \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{nota}
+\textbf{Estrategia didáctica:} El alumno escribe una oración en español y el programa la transforma a la estructura inglesa correcta (alineación interlingüística).
+\end{nota}
+
+\section{Fundamentos Pedagógicos}
+
+\subsection{Teorías de aprendizaje aplicadas}
+
+\begin{table}[H]
+\centering
+\caption{Fundamentos pedagógicos del ecosistema}
+\label{tab:pedagogia}
+\begin{tabular}{|p{3.5cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Teoría} & \textbf{Autor(es)} & \textbf{Aplicación en el proyecto} \\
+\hline
+Constructivismo & Piaget, Vygotsky & El estudiante construye conocimiento al interactuar con programas \\
+\hline
+Aprendizaje activo & Bonwell \& Eison & Ejercicios donde el usuario escribe, selecciona y transforma \\
+\hline
+Retroalimentación inmediata & Hattie \& Timperley & Corrección automática tras cada respuesta \\
+\hline
+Gamificación & Kapp, Werbach & Juegos de gramática con puntuación y niveles \\
+\hline
+Práctica distribuida & Cepeda et al. & Múltiples ejercicios espaciados en el tiempo \\
+\hline
+Zona de Desarrollo Próximo & Vygotsky & Dificultad ajustable según el desempeño \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Competencias lingüísticas desarrolladas}
+
+Basado en el \textbf{Marco Común Europeo de Referencia (MCER)} y los estándares de la \textbf{RAE}:
+
+\begin{itemize}
+    \item \textbf{Competencia gramatical:} Dominio de morfosintaxis
+    \item \textbf{Competencia ortográfica:} Uso correcto de tildes y grafías
+    \item \textbf{Competencia sintáctica:} Identificación de funciones oracionales
+    \item \textbf{Competencia morfológica:} Análisis de prefijos y sufijos
+    \item \textbf{Competencia fonológica:} Reconocimiento de fonemas
+    \item \textbf{Competencia textual:} Producción de párrafos coherentes
+\end{itemize}
+
+\section{Integración en el Aula}
+
+\subsection{Estructura de una sesión típica (50 minutos)}
+
+\begin{table}[H]
+\centering
+\caption{Plan de lección tipo}
+\label{tab:sesion}
+\begin{tabular}{|p{2.5cm}|p{4cm}|p{5cm}|p{2.5cm}|}
+\hline
+\textbf{Tiempo} & \textbf{Actividad} & \textbf{Descripción} & \textbf{Herramienta} \\
+\hline
+0-5' & Activación & Repaso rápido de la clase anterior & Diálogo oral \\
+\hline
+5-15' & Explicación & Introducción del nuevo concepto & Pizarra + ejemplos \\
+\hline
+15-40' & Práctica interactiva & Ejercicios con el programa Python & Programa correspondiente \\
+\hline
+40-45' & Corrección & Resolución de dudas en grupo & Puesta en común \\
+\hline
+45-50' & Cierre & Registro de puntuaciones y avance & Cuaderno / sistema \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Sugerencias por nivel educativo}
+
+\begin{table}[H]
+\centering
+\caption{Adaptación por nivel educativo}
+\label{tab:niveles}
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Nivel} & \textbf{Programas recomendados} & \textbf{Actividad sugerida} \\
+\hline
+Primaria (10-12 años) & Juegos de arrastrar palabras, identificación básica & Competencias de palabras simples \\
+\hline
+Secundaria (13-16 años) & Tutores de latín, ejercicios de sintaxis & Traducción y análisis de oraciones \\
+\hline
+Bachillerato (17-18 años) & Análisis morfológico, problemas gramaticales & Producción de textos complejos \\
+\hline
+Universidad & Herramientas de lingüística, corpus & Investigación filológica \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Evaluación y seguimiento}
+
+Los programas incluyen sistemas de registro automático que permiten al docente:
+
+\begin{itemize}
+    \item Ver el progreso individual de cada estudiante.
+    \item Identificar conceptos problemáticos para toda la clase.
+    \item Generar reportes de desempeño.
+    \item Adaptar la dificultad según los resultados.
+\end{itemize}
+
+\section{Ventajas Tecnológicas}
+
+\subsection{Requisitos técnicos}
+
+\begin{itemize}
+    \item \textbf{Python 3.7 o superior}
+    \item Bibliotecas opcionales: \texttt{tkinter}, \texttt{pygame}, \texttt{kivy}
+    \item Funciona sin conexión a internet (excepto APIs externas)
+    \item Compatible con Windows, macOS, Linux y Android (con Pydroid)
+\end{itemize}
+
+\subsection{Código abierto y personalizable}
+
+Todo el código es \textbf{open source} bajo licencia MIT, lo que permite:
+
+\begin{itemize}
+    \item Modificar ejercicios según necesidades curriculares.
+    \item Traducir a otros idiomas.
+    \item Añadir nuevos ejemplos a los archivos JSON.
+    \item Crear versiones adaptadas a contextos específicos.
+\end{itemize}
+
+\begin{codigo}
+# Ejemplo de personalización: añadir un nuevo ejercicio
+# Editar el archivo JSON correspondiente
+{
+    "pregunta": "¿Cuál es el genitivo de 'rosa'?",
+    "respuesta": "rosae",
+    "tema": "primera_declinacion"
+}
+\end{codigo}
+
+\section{Resultados y Evidencias}
+
+\subsection{Estadísticas del proyecto}
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas generales del repositorio}
+\label{tab:estadisticas}
+\begin{tabular}{|p{5cm}|p{4cm}|}
+\hline
+\textbf{Métrica} & \textbf{Cantidad} \\
+\hline
+Total de archivos Python & 1,183 \\
+\hline
+Módulos principales & 12 \\
+\hline
+Juegos educativos & 50+ \\
+\hline
+Ejercicios de latín & 20+ lecciones \\
+\hline
+Problemas de sintaxis & 60 \\
+\hline
+Ejercicios de diptongos/hiatos & 50+ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Investigaciones previas}
+
+Estudios relevantes respaldan el enfoque:
+
+\begin{itemize}
+    \item \textbf{Rosell-Aguilar (2017):} Las apps para aprendizaje de idiomas mejoran la motivación, pero adolecen de falta de personalización.
+    \item \textbf{Godwin-Jones (2018):} Los chatbots y herramientas interactivas aumentan el tiempo de práctica.
+    \item \textbf{Pérez-Paredes (2019):} Los corpus lingüísticos son útiles pero requieren formación docente.
+\end{itemize}
+
+\textbf{Aportación de este proyecto:} Integra \textit{análisis morfológico automático + juegos + ejercicios de sintaxis} en un solo ecosistema.
+
+\section{Guía Rápida de Inicio}
+
+\subsection{Clonar el repositorio}
+
+\begin{codigo}
+git clone https://github.com/Hernank10/mis-programas-python.git
+cd mis-programas-python
+\end{codigo}
+
+\subsection{Ejecutar un programa de latín}
+
+\begin{codigo}
+cd LATIN/tutores
+python3 "Tutor interactivo de latín en la consola. \
+Este programa se enfoca en el vocabulario básico.py"
+\end{codigo}
+
+\subsection{Ejecutar ejercicios de gramática}
+
+\begin{codigo}
+cd GRAMATICA_CASTELLANA/sintaxis_castellana/60problemas_gramatica
+python3 "problemas_gramática_60_sintaxis_ castellana.py"
+\end{codigo}
+
+\subsection{Ejecutar un juego educativo}
+
+\begin{codigo}
+cd "NUEVOS JUEGOS II"
+python3 "Juego en Python de consola que incluye 7 \
+de los ejercicios gramaticales.py"
+\end{codigo}
+
+\section{Conclusiones}
+
+Este ecosistema de programas Python demuestra que \textbf{la programación puede ser un aliado poderoso en la enseñanza de lenguas}. No se trata solo de escribir código, sino de construir herramientas que:
+
+\begin{enumerate}
+    \item \textbf{Personalizan el aprendizaje:} Cada estudiante avanza a su ritmo.
+    \item \textbf{Motivan mediante juegos:} Los desafíos lúdicos aumentan el compromiso.
+    \item \textbf{Automatizan la corrección:} Liberan tiempo para la reflexión lingüística.
+    \item \textbf{Documentan el progreso:} Registros automáticos para seguimiento.
+    \item \textbf{Conectan teoría y práctica:} Ejercicios contextualizados y relevantes.
+\end{enumerate}
+
+\subsection{Líneas de desarrollo futuro}
+
+\begin{itemize}
+    \item Implementación de sistemas de recomendación adaptativa.
+    \item Integración con asistentes de voz para práctica oral.
+    \item Desarrollo de versiones web para acceso sin instalación.
+    \item Creación de certificaciones automáticas de competencia.
+    \item Expansión a otras lenguas (griego clásico, francés, alemán).
+\end{itemize}
+
+\section{Agradecimientos}
+
+\begin{itemize}
+    \item Real Academia Española (RAE) por las normas gramaticales de referencia.
+    \item Instituto Caro y Cuervo por las referencias lingüísticas colombianas.
+    \item Comunidad de Python por las bibliotecas que hacen posible este proyecto.
+\end{itemize}
+
+\section{Referencias}
+
+\begin{enumerate}
+    \item Bonwell, C. C., \& Eison, J. A. (1991). \textit{Active Learning: Creating Excitement in the Classroom}. ASHE-ERIC Higher Education Report No. 1. Washington, D.C.
+
+    \item Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., \& Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. \textit{Psychological Bulletin}, 132(3), 354-380.
+
+    \item Godwin-Jones, R. (2018). Second language writing online: An update. \textit{Language Learning \& Technology}, 22(1), 1-15.
+
+    \item Hattie, J., \& Timperley, H. (2007). The power of feedback. \textit{Review of Educational Research}, 77(1), 81-112.
+
+    \item Kapp, K. M. (2012). \textit{The Gamification of Learning and Instruction}. Pfeiffer.
+
+    \item Pérez-Paredes, P. (2019). A systematic review of the uses and spread of corpora and data-driven learning in CALL research. \textit{Computer Assisted Language Learning}.
+
+    \item Piaget, J. (1970). \textit{Psicología y pedagogía}. Ariel.
+
+    \item Real Academia Española. (2010). \textit{Nueva gramática de la lengua española}. Espasa.
+
+    \item Rosell-Aguilar, F. (2017). State of the app: A taxonomy and framework for evaluating language learning mobile applications. \textit{CALICO Journal}, 34(2), 243-258.
+
+    \item Vygotsky, L. S. (1978). \textit{Mind in society: The development of higher psychological processes}. Harvard University Press.
+\end{enumerate}
+
+\end{document}
