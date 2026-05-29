@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "tema": "Sintaxis: Primera Declinación",
+    "oracion": "Poetae puellam laudant.",
+    "pregunta": "Identifica el Sujeto (Nominativo) y el Objeto Directo (Acusativo).",
+    "respuestas_validas": [
+      "sujeto poetae objeto directo puellam",
+      "sujeto poetae cd puellam",
+      "sujeto poetae complemento directo puellam"
+    ],
+    "ayuda": "Poetae es nominativo plural (Sujeto). Puellam termina en -am, acusativo singular (Objeto Directo).",
+    "retroalimentacion": "¡Excelente análisis! El verbo laudant (3ª plural) concuerda con Poetae."
+  },
+  {
+    "id": 2,
+    "tema": "Figuras Retóricas / Sintaxis",
+    "oracion": "Magnam in silvam puella ambulat.",
+    "pregunta": "¿Qué nombre recibe la alteración del orden lógico/sintáctico habitual?",
+    "respuestas_validas": [
+      "hiperbaton",
+      "el hiperbaton",
+      "hiperbato"
+    ],
+    "ayuda": "Es una figura muy común en la poesía latina debido a la flexibilidad que otorgan los casos.",
+    "retroalimentacion": "¡Correcto! El hipérbaton separa el adjetivo 'magnam' de su sustantivo 'silvam'."
+  },
+  {
+    "id": 3,
+    "tema": "Ablativo de Modo (Primera Declinación)",
+    "oracion": "Traduce al latín: 'Con gran cuidado' (Cura, -ae / Magnus, -a, -um)",
+    "pregunta": "Escribe la estructura en caso ablativo (puedes usar o no la preposición 'cum').",
+    "respuestas_validas": [
+      "magna cura",
+      "magna cum cura"
+    ],
+    "ayuda": "El ablativo de modo con adjetivo puede omitir el 'cum' o intercalarlo en el medio.",
+    "retroalimentacion": "¡Perfecto! Ambas variantes son académicamente impecables."
+  },
+  {
+    "id": 4,
+    "tema": "Complemento Circunstancial de Lugar",
+    "oracion": "Lugar 'de donde' (proprocedencia)",
+    "pregunta": "¿Cómo se dice 'desde casa' en latín utilizando el sustantivo domus?",
+    "respuestas_validas": [
+      "domo"
+    ],
+    "ayuda": "Se utiliza el caso ablativo directo sin preposición para nombres de ciudades y domus.",
+    "retroalimentacion": "¡Exacto! 'Domo' es el ablativo de procedencia sin preposición."
+  },
+  {
+    "id": 5,
+    "tema": "Evolución Fonética (Latín al Castellano)",
+    "oracion": "Evolución de consonantes intervocálicas",
+    "pregunta": "¿En qué palabra castellana evolucionó el término acusativo 'LUPAM'?",
+    "respuestas_validas": [
+      "loba",
+      "una loba"
+    ],
+    "ayuda": "La 'U' tónica latina suele abrirse en 'o' en castellano, y la oclusiva sorda 'P' sonoriza en 'B'.",
+    "retroalimentacion": "¡Impecable! LUPAM > loba. La pérdida de la -M final y la sonorización de la P intervocálica son reglas clave."
+  }
+]
