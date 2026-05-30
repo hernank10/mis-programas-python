@@ -1,1 +1,30 @@
+# Entorno virtual
 venv/
+env/
+ENV/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos temporales de macOS
+.DS_Store
+._*
+*.swp
+*.swo
+
+# Archivos zip temporales
+*.zip
+*.tar.gz
+*.rar
+
+# Archivos de editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Archivos de backup
+*.bak
+*.backup
