@@ -1,0 +1,27 @@
+# Bibliotecas para interfaces gráficas
+tkinter
+pygame
+kivy
+
+# Procesamiento de imágenes
+Pillow
+
+# Para juegos y gráficos
+numpy
+
+# Para reproducción de audio (algunos juegos)
+pygame-mixer
+
+# Para análisis de texto (algunos programas de lingüística)
+nltk
+spacy
+
+# Para manejo de datos JSON (ya viene con Python)
+# json está incluido en la biblioteca estándar
+
+# Para bases de datos (algunos programas)
+sqlite3
+
+# NOTA: tkinter no se instala con pip, viene con Python
+# En Linux: sudo apt-get install python3-tk
+# En macOS/Windows ya viene incluido
