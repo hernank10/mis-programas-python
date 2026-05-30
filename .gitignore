@@ -28,3 +28,6 @@ __pycache__/
 # Archivos de backup
 *.bak
 *.backup
+venv/
+lib64/
+__pycache__/
