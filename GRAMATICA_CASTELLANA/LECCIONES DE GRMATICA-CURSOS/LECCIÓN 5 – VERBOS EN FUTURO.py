@@ -1,0 +1,113 @@
+import random
+
+# 📘 Teoría
+teoria = """
+📘 LECCIÓN 5 – VERBOS EN FUTURO
+
+Un verbo en futuro indica que la acción **ocurrirá más adelante**, es decir, todavía **no ha sucedido**.
+
+🔹 ¿Cómo los reconocemos?
+   Usan formas como: caminaré, correrán, jugarás, pintaré, comeremos...
+
+🔹 Ejemplos:
+   - "Yo pintaré un dibujo." → pintaré (futuro)
+   - "Ellos viajarán mañana." → viajarán (futuro)
+   - "Tú jugarás en el parque." → jugarás (futuro)
+
+Los verbos en futuro **nos ayudan a hablar de lo que pasará mañana, después o pronto.**
+"""
+
+# 📚 Ejemplos
+ejemplos = [
+    {"oracion": "Mañana visitaré a mi abuela.", "verbo": "visitaré"},
+    {"oracion": "Luis jugará con su pelota.", "verbo": "jugará"},
+    {"oracion": "Nosotros comeremos helado.", "verbo": "comeremos"},
+    {"oracion": "Ellas leerán un cuento divertido.", "verbo": "leerán"},
+    {"oracion": "Tú ayudarás en la cocina.", "verbo": "ayudarás"}
+]
+
+# 📝 20 ejercicios
+ejercicios = [
+    {"oracion": "El sábado correré en la carrera.", "verbo": "correré"},
+    {"oracion": "Mis amigos vendrán a jugar.", "verbo": "vendrán"},
+    {"oracion": "Papá cocinará una pizza.", "verbo": "cocinará"},
+    {"oracion": "Yo escribiré una historia.", "verbo": "escribiré"},
+    {"oracion": "Tú estudiarás para el examen.", "verbo": "estudiarás"},
+    {"oracion": "Ellos pasearán por el parque.", "verbo": "pasearán"},
+    {"oracion": "María pintará su dibujo.", "verbo": "pintará"},
+    {"oracion": "Nosotros leeremos un cuento.", "verbo": "leeremos"},
+    {"oracion": "El perro jugará con su pelota.", "verbo": "jugará"},
+    {"oracion": "Mañana saldré temprano.", "verbo": "saldré"},
+    {"oracion": "Ustedes traerán los materiales.", "verbo": "traerán"},
+    {"oracion": "Yo construiré una torre.", "verbo": "construiré"},
+    {"oracion": "Carlos cantará en la fiesta.", "verbo": "cantará"},
+    {"oracion": "Ellas bailarán en el salón.", "verbo": "bailarán"},
+    {"oracion": "Tú prepararás la mochila.", "verbo": "prepararás"},
+    {"oracion": "Mi hermana ordenará sus libros.", "verbo": "ordenará"},
+    {"oracion": "Nosotros iremos al zoológico.", "verbo": "iremos"},
+    {"oracion": "El gato dormirá en su cama.", "verbo": "dormirá"},
+    {"oracion": "Yo dibujaré animales.", "verbo": "dibujaré"},
+    {"oracion": "Mañana veremos una película.", "verbo": "veremos"}
+]
+
+elogios = [
+    "🎉 ¡Muy bien!",
+    "🧠 ¡Detectaste el verbo en futuro!",
+    "🌈 ¡Excelente!",
+    "👏 ¡Correcto!",
+    "⭐ ¡Genial análisis!"
+]
+
+# 📚 Mostrar teoría
+def mostrar_teoria():
+    print(teoria)
+
+# 📘 Mostrar ejemplos
+def mostrar_ejemplos():
+    print("\n📚 EJEMPLOS:")
+    for ej in ejemplos:
+        print(f"🔹 Oración: {ej['oracion']}")
+        print(f"👉 Verbo en futuro: {ej['verbo']}\n")
+
+# 📝 Ejercicios
+def practicar_ejercicios():
+    print("\n📝 EJERCICIOS (10 al azar):")
+    seleccion = random.sample(ejercicios, 10)
+    aciertos = 0
+    for i, ej in enumerate(seleccion, 1):
+        print(f"\n{str(i).zfill(2)}. Oración: {ej['oracion']}")
+        respuesta = input("👉 ¿Cuál es el verbo en futuro?: ").strip().lower()
+        if respuesta == ej["verbo"]:
+            print(random.choice(elogios))
+            aciertos += 1
+        else:
+            print(f"😅 Era: '{ej['verbo']}'.")
+
+    print(f"\n🎓 Resultados: {aciertos}/10")
+    if aciertos == 10:
+        print("🏅 ¡Insignia obtenida: Maestro del Futuro! 🚀")
+
+# 🎮 Menú principal
+def menu():
+    while True:
+        print("\n🧠 Sintaxis Quest EDU – 2.º Primaria – Lección 5")
+        print("1. Ver teoría 📘")
+        print("2. Ver ejemplos explicados 📚")
+        print("3. Practicar ejercicios 📝")
+        print("4. Salir 👋")
+        opcion = input("👉 Elige una opción: ")
+
+        if opcion == "1":
+            mostrar_teoria()
+        elif opcion == "2":
+            mostrar_ejemplos()
+        elif opcion == "3":
+            practicar_ejercicios()
+        elif opcion == "4":
+            print("👋 ¡Gracias por explorar el mundo del futuro verbal!")
+            break
+        else:
+            print("⚠️ Opción no válida. Intenta otra vez.")
+
+if __name__ == "__main__":
+    menu()
