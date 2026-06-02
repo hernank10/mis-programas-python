@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Juegos de Texto - Biblioteca Avanzada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+        }
+        .header {
+            background: rgba(0,0,0,0.5);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #ff6b6b;
+        }
+        .game-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+        .btn-jugar {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        .badge-cat {
+            background: #4ecdc4;
+            color: #1a1a2e;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📚 Nuevos Juegos de Texto</h1>
+        <p>Colección avanzada de juegos interactivos y tutoriales</p>
+        <a href="../index.html" class="btn btn-outline-light btn-sm">← Volver a juegos principales</a>
+        <a href="../../index.html" class="btn btn-outline-light btn-sm ms-2">← Portal principal</a>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Juego: Aventura Clásica -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('Aventura de Texto Clásica.py', '_blank')">
+                    <div class="game-icon">🏰</div>
+                    <h4>Aventura Clásica</h4>
+                    <p>Juego tradicional de aventura de texto con mazmorras y tesoros.</p>
+                    <span class="badge-cat">🎮 Aventura</span>
+                    <button class="btn-jugar">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Juego: Misterio con Puzzles -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('Juego de Misterio con Puzzles.py', '_blank')">
+                    <div class="game-icon">🔍</div>
+                    <h4>Misterio con Puzzles</h4>
+                    <p>Resuelve acertijos para avanzar en la historia.</p>
+                    <span class="badge-cat">🧩 Puzzles</span>
+                    <span class="badge-cat">🔍 Misterio</span>
+                    <button class="btn-jugar">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Juego: Rol basado en texto -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('Juego de Rol Basado en Texto.py', '_blank')">
+                    <div class="game-icon">⚔️</div>
+                    <h4>Juego de Rol (RPG)</h4>
+                    <p>Sistema de combate por turnos y desarrollo de personaje.</p>
+                    <span class="badge-cat">⚔️ RPG</span>
+                    <span class="badge-cat">🎲 Combate</span>
+                    <button class="btn-jugar">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Simulador de Relaciones -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('Simulador de Relaciones Interactivas.py', '_blank')">
+                    <div class="game-icon">💕</div>
+                    <h4>Simulador de Relaciones</h4>
+                    <p>Decisiones afectan relaciones entre personajes.</p>
+                    <span class="badge-cat">💕 Relaciones</span>
+                    <button class="btn-jugar">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Escenario de Juego -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('escenario juego.py', '_blank')">
+                    <div class="game-icon">🎬</div>
+                    <h4>Escenario de Juego</h4>
+                    <p>Plantilla de escenario para crear tus propias aventuras.</p>
+                    <span class="badge-cat">📝 Plantilla</span>
+                    <button class="btn-jugar">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Ejemplo Integrando Comandos -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('Ejemplo Completo Integrando Comandos Básicos.py', '_blank')">
+                    <div class="game-icon">⌨️</div>
+                    <h4>Comandos Básicos</h4>
+                    <p>Ejemplo completo de sistema de comandos para juegos de texto.</p>
+                    <span class="badge-cat">⌨️ Comandos</span>
+                    <button class="btn-jugar">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Guía de Análisis y Mejoras -->
+            <div class="col-md-6">
+                <div class="game-card" onclick="window.open('Análisis de los Ejemplos y Posibles Mejoras.py', '_blank')">
+                    <div class="game-icon">📊</div>
+                    <h4>Análisis y Mejoras</h4>
+                    <p>Análisis detallado de los juegos y sugerencias de mejora.</p>
+                    <span class="badge-cat">📚 Documentación</span>
+                    <button class="btn-jugar">Ver documento</button>
+                </div>
+            </div>
+
+            <!-- Desarrollo y Mejora -->
+            <div class="col-md-6">
+                <div class="game-card" onclick="window.open(' Desarrollo y Mejora de Juegos de Texto en Python- Otros Cinco Ejemplos.py', '_blank')">
+                    <div class="game-icon">🚀</div>
+                    <h4>Desarrollo y Mejora</h4>
+                    <p>5 ejemplos adicionales para mejorar tus juegos de texto.</p>
+                    <span class="badge-cat">📚 Tutorial</span>
+                    <button class="btn-jugar">Ver documento</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Archivos adicionales listados -->
+        <div class="game-card mt-3">
+            <h3>📁 Archivos adicionales</h3>
+            <ul>
+                <li>📄 Idle2_programas juegos de texto.py</li>
+                <li>📄 juego_de_texto10/ (carpeta)</li>
+                <li>📄 juego_de_texto8/ (carpeta)</li>
+                <li>📄 juego_de_texto9/ (carpeta)</li>
+                <li>📄 juego_texto12.py</li>
+                <li>📄 Incorporar comandos de texto.py</li>
+                <li>📄 Simulador de Elección de Historia.py</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 mt-4" style="background: rgba(0,0,0,0.5);">
+        <p>🎮 14+ recursos en esta carpeta | Creado por @Hernank10</p>
+        <p>🐍 Python + Juegos de texto interactivos</p>
+    </footer>
+</body>
+</html>
