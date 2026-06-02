@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos de Texto - Biblioteca Colorama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #e94560;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .game-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.15);
+        }
+        .game-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .btn-jugar {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        .btn-jugar:hover {
+            background: #ff6b6b;
+            color: white;
+        }
+        .badge-cat {
+            background: #0f3460;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+        footer {
+            background: #0f3460;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        pre {
+            background: #1a1a2e;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎮 Juegos de Texto Interactivos</h1>
+        <p>Colección de aventuras y juegos educativos con Colorama y Python</p>
+        <a href="../index.html" class="btn btn-outline-light btn-sm">← Volver al portal principal</a>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Juego Principal: Aventura en Planetas -->
+            <div class="col-md-6">
+                <div class="game-card" onclick="window.open('aventura_tomsom_planetas2.py', '_blank')">
+                    <div class="game-icon">🚀</div>
+                    <h3>Aventura en Planetas</h3>
+                    <p>Explora planetas lejanos en esta aventura interactiva. Toma decisiones y descubre mundos nuevos.</p>
+                    <span class="badge-cat">🎮 Aventura</span>
+                    <span class="badge-cat">🌍 Planetas</span>
+                    <div><button class="btn-jugar">▶ Jugar (ver código)</button></div>
+                </div>
+            </div>
+
+            <!-- Juego: Ciudad Salvaje -->
+            <div class="col-md-6">
+                <div class="game-card" onclick="window.open('tomson_ciudad_salvaje.py', '_blank')">
+                    <div class="game-icon">🏙️</div>
+                    <h3>Tomson - Ciudad Salvaje</h3>
+                    <p>Acompaña a Tomson en una aventura urbana llena de desafíos y decisiones.</p>
+                    <span class="badge-cat">🎮 Aventura</span>
+                    <span class="badge-cat">🏙️ Urbano</span>
+                    <div><button class="btn-jugar">▶ Jugar (ver código)</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!-- Juego de Texto 1 -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('juego_de_texto1.py', '_blank')">
+                    <div class="game-icon">📖</div>
+                    <h4>Juego de Texto 1</h4>
+                    <p>Juego básico de aventura de texto.</p>
+                    <button class="btn-jugar btn-sm">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Juego de Texto 2 -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('juego_de_texto2.py', '_blank')">
+                    <div class="game-icon">📖</div>
+                    <h4>Juego de Texto 2</h4>
+                    <p>Segunda versión del juego interactivo.</p>
+                    <button class="btn-jugar btn-sm">Ver código</button>
+                </div>
+            </div>
+
+            <!-- Juego de Texto 3 -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('juego_de_texto3.py', '_blank')">
+                    <div class="game-icon">📖</div>
+                    <h4>Juego de Texto 3</h4>
+                    <p>Tercera versión con mejoras.</p>
+                    <button class="btn-jugar btn-sm">Ver código</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!-- Versiones Mejoradas -->
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('juego_de_texto6mejoras.py', '_blank')">
+                    <div class="game-icon">⚡</div>
+                    <h4>Versión Mejorada 6</h4>
+                    <p>Versión con mejoras interactivas.</p>
+                    <button class="btn-jugar btn-sm">Ver código</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('juego_de_texto_12.py', '_blank')">
+                    <div class="game-icon">🎯</div>
+                    <h4>Juego de Texto 12</h4>
+                    <p>Versión avanzada del juego.</p>
+                    <button class="btn-jugar btn-sm">Ver código</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="game-card" onclick="window.open('juego_texto122.py', '_blank')">
+                    <div class="game-icon">🔄</div>
+                    <h4>Juego Texto 122</h4>
+                    <p>Variante mejorada del juego.</p>
+                    <button class="btn-jugar btn-sm">Ver código</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subcarpeta: Nuevos juegos -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="game-card" onclick="window.open('Nuevos_juegos_detexto/', '_blank')">
+                    <div class="game-icon">📁</div>
+                    <h3>📁 Nuevos Juegos de Texto</h3>
+                    <p>Explora la carpeta con juegos adicionales, ejemplos avanzados y tutoriales.</p>
+                    <span class="badge-cat">📁 14+ archivos</span>
+                    <span class="badge-cat">🎮 Juegos</span>
+                    <span class="badge-cat">📚 Tutoriales</span>
+                    <div><button class="btn-jugar">📂 Explorar carpeta</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consejos y Documentación -->
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="game-card" onclick="window.open('100 consejos para crear juegos de texto en Python con sus traducciones al inglés.py', '_blank')">
+                    <div class="game-icon">💡</div>
+                    <h4>100 Consejos para Juegos de Texto</h4>
+                    <p>Consejos útiles para crear juegos de texto en Python (bilingüe).</p>
+                    <button class="btn-jugar btn-sm">Ver consejos</button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="game-card" onclick="window.open('consejos_juegos_de_texto.py', '_blank')">
+                    <div class="game-icon">📝</div>
+                    <h4>Más Consejos</h4>
+                    <p>Recopilación adicional de consejos y buenas prácticas.</p>
+                    <button class="btn-jugar btn-sm">Ver consejos</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cómo ejecutar -->
+        <div class="game-card" style="background: #0f3460;">
+            <h3>🐍 Cómo ejecutar estos juegos</h3>
+            <pre style="background: #1a1a2e; color: #00ff00;">
+# Clonar el repositorio
+git clone https://github.com/Hernank10/mis-programas-python.git
+cd mis-programas-python/"JUEGOS_DE_TEXTO_ PLANETAS _BIBLIOTECA_colorama"
+
+# Instalar dependencias
+pip install colorama nltk
+
+# Ejecutar un juego
+python "tomson_ciudad_salvaje.py"
+
+# O para ver el índice HTML (este archivo)
+# Abrir index.html en el navegador
+            </pre>
+            <p class="mt-2">🎮 Todos los juegos son de texto y funcionan en la terminal.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>🎮 Biblioteca de Juegos de Texto | Creado por @Hernank10</p>
+        <p>🐍 Python + Colorama + NLTK | Aventuras interactivas</p>
+        <a href="../index.html" class="text-white">← Volver al portal principal</a>
+    </footer>
+
+    <script>
+        console.log("🎮 Biblioteca de juegos de texto cargada - 70+ archivos disponibles");
+    </script>
+</body>
+</html>
